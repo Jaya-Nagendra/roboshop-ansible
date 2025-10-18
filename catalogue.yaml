@@ -60,7 +60,7 @@
 
   - name: demon reload 
     ansible.builtin.systemd:
-      demon_reload: true
+      daemon_reload: true
     
   - name: copy mongo repo to yum.repos.d
     ansible.builtin.copy:
