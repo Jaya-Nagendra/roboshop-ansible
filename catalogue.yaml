@@ -69,7 +69,7 @@
 
   - name: Install mongodb shell
     ansible.builtin.yum:
-      name: mongodb-org
+      name: mongodb-org-shell
       state: installed
 
   - name: load catalogue data
