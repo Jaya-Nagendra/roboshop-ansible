@@ -59,7 +59,7 @@
       dest: /etc/systemd/system/catalogue.service    
 
   - name: demon reload 
-    ansible.builtin.system:
+    ansible.builtin.systemd:
       demon_reload: true
     
   - name: copy mongo repo to yum.repos.d
