@@ -12,7 +12,7 @@
 
     - name: Install mysql comunity server
       ansible.builtin.yum:
-        name: ysql-community-server
+        name: mysql-community-server
         state: installed
 
     - name: Restart mysql
