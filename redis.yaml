@@ -11,7 +11,7 @@
 
     - name: Enable Redis 6.2 module
       ansible.builtin.command: dnf module enable redis:remi-6.2 -y
-      remote_src: yes
+      
 
     - name: Install Redis
       ansible.builtin.yum:
