@@ -36,9 +36,9 @@
 
     - name: download shipping artifact
       ansible.builtin.unarchive:
-      src: https://roboshop-builds.s3.amazonaws.com/shipping.zip
-      dest: /app
-      remote_src: yes
+        src: https://roboshop-builds.s3.amazonaws.com/shipping.zip
+        dest: /app
+        remote_src: yes
 
     - name: maven package 
       ansible.builtin.command: mvn clean package
