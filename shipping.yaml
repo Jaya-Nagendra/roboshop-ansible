@@ -65,7 +65,7 @@
         state: installed    
 
     - name: load mysql schema
-      ansible.builtin.command: mysql -h mysql.ljnag.space -uroot -pRoboShop@1 < /app/schema/shipping.sql       
+      ansible.builtin.shell: mysql -h mysql.ljnag.space -uroot -pRoboShop@1 < /app/schema/shipping.sql       
 
     - name: Restart shipping
       ansible.builtin.service:
