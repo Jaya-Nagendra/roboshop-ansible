@@ -1,17 +1,17 @@
-- name: Installl redis components
+- name: Install Redis components
   hosts: redis
   become: yes
   tasks:
-  - name: Install redis repo
-    ansible.builtin.dnf:
-      name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm 
-      state: installed
-      disable_gpg_check: true
+    - name: Install Redis repo
+      ansible.builtin.dnf:
+        name: https://rpms.remirepo.net/enterprise/8/remi-release-8.8-1.el8.remi.noarch.rpm
+        state: present
+        disable_gpg_check: true
 
-  - name: Enable redis 6.2
-    ansible.builtin.command: yum module enable redis:remi-6.2    
+    - name: Enable Redis 6.2 module
+      ansible.builtin.command: dnf module enable redis:remi-6.2 -y
 
-  - name: Install redis
-    ansible.builtin.yum: 
-      name: redis
-      state: installed      
+    - name: Install Redis
+      ansible.builtin.dnf:
+        name: redis
+        state: present
