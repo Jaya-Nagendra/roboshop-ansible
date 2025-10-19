@@ -36,7 +36,7 @@
 
     - name: download shipping artifact
       ansible.builtin.unarchive:
-        src: https://roboshop-builds.s3.amazonaws.com/shipping.zip
+        src: https://roboshop-artifacts.s3.amazonaws.com/shipping-v3.zip
         dest: /app
         remote_src: yes
 
@@ -65,7 +65,7 @@
         state: installed    
 
     - name: load mysql schema
-      ansible.builtin.shell: mysql -h mysql.ljnag.space -uroot -pRoboShop@1 < /app/schema/shipping.sql       
+      ansible.builtin.shell: mysql -h mysql.ljnag.space -uroot -pRoboShop@1 < /app/db/master-data.sql     
 
     - name: Restart shipping
       ansible.builtin.service:
